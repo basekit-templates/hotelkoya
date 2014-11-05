@@ -3,7 +3,6 @@
    =============================== */
    
 @import "@{templateCommon}/basekit-bootstrap.less";
-
 @import "@{templateLocal}/css/common-forms.less";
 @import "@{templateLocal}/css/common-text.less";
 @import "@{templateLocal}/css/widgets-blog.less";
@@ -142,6 +141,7 @@ body {
 header.bk-header {
   padding: 0;
   border-top: 4px solid @color-swatch3;
+  background-color: @color-swatch7;
 }
 
 .companyheader {
@@ -201,6 +201,9 @@ footer.bk-footer {
    EXTENDED NAVIGATION
    =============================== */
 
+.widget.extendednavigation {
+  z-index: 99999;
+}
 
 .widget.extendednavigation ul li {
   border-bottom: 4px solid @color-swatch2;
@@ -265,13 +268,32 @@ footer.bk-footer {
   margin-top: 20px;
 }
 
+/* Selected state */
 
+.extendednavigation ul li.folder.selected ul li .text {
+    color: @font-swatch6-color;
+}
+
+.extendednavigation ul li.selected, .extendednavigation ul li:hover ul li.selected, .extendednavigation ul li.folder.selected ul li.selected, .extendednavigation ul li.folder.selected {
+    a, .text {
+        color: @font-swatch6-color-hover;
+    }
+}
 
 
 
 /* ===============================
    FEATURE
    =============================== */
+
+ .widget.feature {
+  border-top: 4px solid @color-swatch2;
+  margin-top: -4px;
+  @media @tablet {
+    border-top: none;
+    margin-top: 0;
+  }
+ }
 
 .widget.feature .feature-bgimg {
   height: 500px; /* should be in media query*/
