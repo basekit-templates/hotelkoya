@@ -209,6 +209,9 @@ footer.bk-footer {
   border-bottom: 4px solid @color-swatch2;
   &.selected {
     border-bottom: 4px solid fade(@color-swatch3, 50%);
+    @media @tablet {
+      border-bottom: 1px solid fade(@color-swatch3, 50%);
+    }
   }
   a {
     padding: 0;
