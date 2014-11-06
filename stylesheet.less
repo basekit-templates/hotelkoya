@@ -3,7 +3,6 @@
    =============================== */
    
 @import "@{templateCommon}/basekit-bootstrap.less";
-
 @import "@{templateLocal}/css/common-forms.less";
 @import "@{templateLocal}/css/common-text.less";
 @import "@{templateLocal}/css/widgets-blog.less";
@@ -142,6 +141,7 @@ body {
 header.bk-header {
   padding: 0;
   border-top: 4px solid @color-swatch3;
+  background-color: @color-swatch7;
 }
 
 .companyheader {
@@ -201,11 +201,17 @@ footer.bk-footer {
    EXTENDED NAVIGATION
    =============================== */
 
+.widget.extendednavigation {
+  z-index: 99999;
+}
 
 .widget.extendednavigation ul li {
   border-bottom: 4px solid @color-swatch2;
   &.selected {
     border-bottom: 4px solid fade(@color-swatch3, 50%);
+    @media @tablet {
+      border-bottom: 1px solid fade(@color-swatch3, 50%);
+    }
   }
   a {
     padding: 0;
@@ -265,13 +271,32 @@ footer.bk-footer {
   margin-top: 20px;
 }
 
+/* Selected state */
 
+.extendednavigation ul li.folder.selected ul li .text {
+    color: @font-swatch6-color;
+}
+
+.extendednavigation ul li.selected, .extendednavigation ul li:hover ul li.selected, .extendednavigation ul li.folder.selected ul li.selected, .extendednavigation ul li.folder.selected {
+    a, .text {
+        color: @font-swatch6-color-hover;
+    }
+}
 
 
 
 /* ===============================
    FEATURE
    =============================== */
+
+ .widget.feature {
+  border-top: 4px solid @color-swatch2;
+  margin-top: -4px;
+  @media @tablet {
+    border-top: none;
+    margin-top: 0;
+  }
+ }
 
 .widget.feature .feature-bgimg {
   height: 500px; /* should be in media query*/
@@ -475,43 +500,23 @@ footer.bk-footer {
 
 
 .widget.responsiveslideshow {
-  .slideshow-image-list {
-    margin: 0 0;
-  }
-  .slideshow-widget-controls {
-    padding-top: 20px;
-    padding-bottom: 40px;
-    margin-top: 0;
-    -webkit-user-select: none;  
-    -moz-user-select: none;     
-    -ms-user-select: none; 
-    @media @mobile {
-      padding-top: 5px;
-      padding-bottom: 5px;
+    .slideshow-image-list,
+    .slideshow-widget {
+        min-height: 450px;
+        @media @tablet {
+            min-height: 350px;
+        }
+        @media @mobile {
+            min-height: 280px;
+            height: 280px;
+        }
     }
-  }
-  // Dot
-  .slideshow-widget-controls .dot {
-    &:not(.selected) {
-      cursor: pointer;
+    .title {
+        display: block;
     }
-    border-radius: 50%;
-    margin: 0 6px;
-    background: @color-swatch1;
-    border: 4px solid @color-swatch3;
-    &.selected {
-      background: @color-swatch3;
-      border: 4px solid @color-swatch3;
+    .content-wrapper {
+        background: rgba(0,0,0,0.5);
     }
-    &:hover:not(.selected) {
-      border: 2px solid @color-swatch3;
-    }
-    @media @mobile {
-      width: 8px;
-      height: 8px;
-      border: 2px solid @color-swatch3;
-    }
-  }
   .slideshow-widget {
     -webkit-user-select: none;  
     -moz-user-select: none;    
@@ -568,73 +573,57 @@ footer.bk-footer {
 
     // Button play
     .btn-play {
-      background-color:  @color-swatch3;
-      color: @color-swatch1;
-      min-width: 30px;
-      top: 0;
-      left: 0;
-      width: 60px;
-     
-      @media @mobile {
-        width: 35px;
-        height: 35px;
-      }
-      &:after {
-        font-size: 16px;
-        @media @tablet {
-          font-size: 20px;
-          line-height: 35px;
+        background: rgba(0,0,0,0.5);
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        margin: 0 auto;
+        height: 60px;
+        width: 80px;
+        @media @mobile {
+            left: 38%;
         }
-      }
-      &:hover {
-        background-color: darken(@color-swatch2, 10%);
-      }
+        &:after {
+            color: #fff;
+            top: 2px;
+        }
     }
   }
-  .content-wrapper {
-    // (Appears even without content)
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    top:auto;
-    background-color: fade(@color-swatch1, 90%); 
-    .title, .description {
-      display: inline-block;
-      float: left;
-      padding: 3px 16px;
-      color: @color-swatch5;
-    }
-    .title {
-      font-weight: bold;
-      color: @color-swatch3;
-      font-family: @font-swatch8-font-family;
-      font-size: bkscale(@font-swatch5-font-size, 1.2);
-      line-height: bkscale(@font-swatch5-line-height, 1.2);
-    
+  /* Slideshow Controls */
+    .slideshow-widget-controls {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      margin-top: 0;
+      -webkit-user-select: none;  
+      -moz-user-select: none;     
+      -ms-user-select: none; 
       @media @mobile {
-        font-size: bkscale(@font-swatch5-font-size, 0.8);
-        line-height: bkscale(@font-swatch5-line-height, 0.8);
+        padding-top: 5px;
+        padding-bottom: 5px;
       }
     }
-    .description {
-      
-      clear: both;
-     
-      font-size: bkscale(@font-swatch5-font-size, 1);
-      line-height: bkscale(@font-swatch5-line-height, 1);
-      
+    // Dot
+    .slideshow-widget-controls .dot {
+      &:not(.selected) {
+        cursor: pointer;
+      }
+      border-radius: 50%;
+      margin: 0 6px;
+      background: @color-swatch1;
+      border: 4px solid @color-swatch3;
+      &.selected {
+        background: @color-swatch3;
+        border: 4px solid @color-swatch3;
+      }
+      &:hover:not(.selected) {
+        border: 2px solid @color-swatch3;
+      }
       @media @mobile {
-        font-size: bkscale(@font-swatch5-font-size, 0.7);
-        line-height: bkscale(@font-swatch5-line-height, 0.8);
+        width: 8px;
+        height: 8px;
+        border: 2px solid @color-swatch3;
       }
     }
-
-    .title + .description {
-      padding-top: 0;
-      margin-top: -0.5em;
-    }
-  }
 }
 
 
