@@ -1,7 +1,7 @@
 /* ===============================
    IMPORT CSS
    =============================== */
-   
+
 @import "@{templateCommon}/basekit-bootstrap.less";
 @import "@{templateLocal}/css/common-forms.less";
 @import "@{templateLocal}/css/common-text.less";
@@ -50,7 +50,7 @@ body {
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
-    display: flex;    
+    display: flex;
     min-height: 100vh;
     flex-direction: column;
      -webkit-flex-direction: column;
@@ -76,7 +76,7 @@ body {
 
 
 .bk-header {
-   
+
     .wrapper {
       // Flex parent
       display: -webkit-box;
@@ -130,7 +130,7 @@ body {
 
       min-width: 30%;
 
-     
+
 
       @media @mobile {
         display: block;
@@ -140,7 +140,7 @@ body {
       }
 
       .widget.companyname {
-       
+
       }
     }
     .extendednavigation {
@@ -440,6 +440,9 @@ footer.bk-footer {
     border-radius: 4px;
     cursor: pointer;
     display: inline-block;
+    .more, .less {
+       color: @font-swatch7-color;
+    }
 }
 
 .widget.content span.expand:hover,
@@ -552,8 +555,8 @@ footer.bk-footer {
         background: rgba(0,0,0,0.5);
     }
   .slideshow-widget {
-    -webkit-user-select: none;  
-    -moz-user-select: none;    
+    -webkit-user-select: none;
+    -moz-user-select: none;
     -ms-user-select: none;
 
     // Buttons prev/next
@@ -569,7 +572,7 @@ footer.bk-footer {
         width: 35px;
         height: 35px;
       }
-      
+
       &:after {
         display: block;
         content: "";
@@ -629,9 +632,9 @@ footer.bk-footer {
       padding-top: 20px;
       padding-bottom: 40px;
       margin-top: 0;
-      -webkit-user-select: none;  
-      -moz-user-select: none;     
-      -ms-user-select: none; 
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
       @media @mobile {
         padding-top: 5px;
         padding-bottom: 5px;
@@ -733,7 +736,7 @@ hr.line {
         border-bottom: none;
         margin-bottom: 0;
       }
-     
+
       // footer
       a, time + span, time {
         font-size: bkscale(@font-swatch5-font-size, 0.8);
@@ -758,7 +761,7 @@ hr.line {
           width: (@twitterProfilePicSize * 0.55);
           height: (@twitterProfilePicSize * 0.55);
         }
-        
+
         img {
           width: 100%;
           height: auto;
@@ -942,7 +945,7 @@ hr.line {
     }
   }
 }
-  
+
 
 
 /* ===============================
@@ -1030,7 +1033,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span {
   font-family: @font-swatch4-font-family;
   font-size: @font-swatch5-font-size;
   color: @color-swatch3;
-  
+
 }
 
 .widget.profile .twitter-content p {
@@ -1249,7 +1252,7 @@ footer.bk-footer .widget.profile .twitter span {
 
 
 @media only screen and (max-width : 1200px) and (min-width : 768px) {
-  
+
    /* Tablet view: feature */
    .widget.feature .spare {
     width: 50%;
@@ -1287,7 +1290,7 @@ footer.bk-footer .widget.profile .twitter span {
     padding: 0;
     margin-top: -40px;
     padding-top: 40px;
-    
+
     ul li a .text, .folder .text {
       padding: 16px 0;
     }
@@ -1371,7 +1374,7 @@ footer.bk-footer .widget.profile .twitter span {
 
   /* FEATURE */
 
-  
+
    .widget.feature .feature-bgimg {
     height: 300px; /* should be in media query*/
    }
@@ -1404,7 +1407,7 @@ footer.bk-footer .widget.profile .twitter span {
 
 
 
-  
+
 
 
   .widget .extendednavigation ul.align-right li.folder:after {
@@ -1472,7 +1475,7 @@ blockquote {
 }
 
 
- 
+
 }
 
 @media only screen and (min-width: 1140px) {
