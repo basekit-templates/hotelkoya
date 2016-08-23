@@ -1,7 +1,7 @@
 {
 	"name":"Hotel Koya",
 	"thumbnail":"hotelkoya.png",
-	"screenshot":"hotelkoya.png",
+	"screenshot":"hotelkoya-screenshot.jpg",
 	"templateType":"standard",
     "pageTypes": ["home"],
 
