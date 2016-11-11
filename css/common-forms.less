@@ -19,7 +19,8 @@
 .blog-post-more-link a,
 .blog-list-footer .paginate-older,
 .widget.clicktocall a,
-.widget.ecombasket .ecombasket-pull
+.widget.ecombasket .ecombasket-pull,
+.advancedcontactform fieldset button
  {
 	padding: 0 8px;
 	display: inline-block;
@@ -101,7 +102,12 @@
 .widget input[type="email"],
 .productlist-filter .productlist-search input,
 .signupform fieldset input,
-.fonectacontactform textarea {
+.fonectacontactform textarea,
+.advancedcontactform form input[type=email], 
+.advancedcontactform form input[type=text],
+.advancedcontactform form select,
+.advancedcontactform fieldset textarea
+ {
 	background-color: @color-swatch1;
 	border: 4px solid #f3f3f3;
 	padding: 0 0.5em;
@@ -130,12 +136,22 @@
 	}
 }
 
+.advancedcontactform form select {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.advancedcontactform .option-list {
+	padding: 1em 0;
+}
+
 .widget.profile form fieldset input {
 	height:46px!important;
 }
 
 .contactform textarea,
-.fonectacontactform textarea {
+.fonectacontactform textarea,
+.advancedcontactform fieldset textarea {
 	line-height: bkscale(@font-swatch7-line-height, 0.7);
 	min-height: 10em;
 	padding-top: 0.6em;
@@ -153,7 +169,10 @@
 .blog-search-form label,
 .widget.ecomcheckout .delivery label,
 .ecom-product-vartitle,
-.fonectacontactform {
+.fonectacontactform,
+.widget.contactform fieldset label,
+.advancedcontactform .form-group>label,
+.advancedcontactform .option-list .option-item .label {
     font-family:@font-swatch1-font-family;
     font-size: @font-swatch4-font-size;
     font-weight:@font-swatch4-font-weight;
