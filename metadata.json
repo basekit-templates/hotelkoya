@@ -4,6 +4,7 @@
 	"screenshot":"hotelkoya-screenshot.jpg",
 	"templateType":"standard",
     "pageTypes": ["home"],
+    "versionTenCompatible": 1,
 
     "tags": {
     "en": ["colorful", "bright", "hotel", "holiday", "modern", "colourful", "travel", "hospitality", "turism", "clean", "simple", "sans-serif"],
