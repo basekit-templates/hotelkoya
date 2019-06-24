@@ -1,0 +1,40 @@
+.empty-zone,
+#page-zones__main:empty,
+.canvas,
+#page-zones__main > .widget:not(.row),
+.row:not(.widget):not(.row--width-no-padding) .row__container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
+
+  @media @tablet {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.widget.feature {
+  margin: 0;
+}
+
+.main {
+  padding:0;
+}
+
+.edit #page-zones__main-overlay + .widget:not(.row),
+#page-zones__main > .widget:not(.row):first-child {
+  margin-top: 50px;
+
+  @media @tablet {
+    margin-top: 20px;
+  }
+}
+
+
+#page-zones__main > .widget:not(.row):last-child {
+  margin-bottom: 50px;
+
+  @media @tablet {
+    margin-bottom: 20px;
+  }
+}
