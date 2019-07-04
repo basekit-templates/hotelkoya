@@ -24,7 +24,7 @@ body {
 }
 
 .wrapper {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -107,6 +107,7 @@ body {
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center;
+      max-width: 960px;
 
       @media @tablet {
         display: block;
@@ -223,6 +224,9 @@ footer.bk-footer {
   .widget.content {
     padding: 0 0 5px;
   }
+  .wrapper {
+    max-width: 960px;
+  }
 }
 
 
@@ -327,10 +331,6 @@ footer.bk-footer {
  .widget.feature {
   border-top: 4px solid @color-swatch2;
   margin-top: -4px;
-  @media @tablet {
-    border-top: none;
-    margin-top: 0;
-  }
  }
 
 .widget.feature .feature-bgimg {
@@ -1479,7 +1479,7 @@ blockquote {
 
 @media only screen and (min-width: 1140px) {
   .wrapper {
-    width: 100%; /* 1140px - 10% for margins */
+    width: 100%;
     margin: 0 auto;
   }
 }
