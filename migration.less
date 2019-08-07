@@ -1,0 +1,81 @@
+
+#migrated-site {
+    
+
+
+
+    //  Template - Stylesheet overrides
+    // ---------------------------------
+
+
+    .canvas,
+    .main {
+        padding: 0;
+    }
+
+
+    .main.wrapper {
+        margin: 0;
+        width: 100%;
+    }
+
+
+
+
+    //  Migration - Container & Spacing
+    // -----------------------------------
+
+
+    .empty-zone,
+    #page-zones__main:empty,
+    .canvas,
+    #page-zones__main > .widget:not(.row),
+    .row:not(.widget):not(.row--width-no-padding) .row__container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 960px;
+        width: 90%;
+    }
+
+
+    // Adds spacing to a section when a widget follows it
+    #page-zones__main > .row + .widget:not(.row) {
+        margin-top: 20px;
+    }
+
+
+    // Adds spacing to a widget when a section follows it
+    #page-zones__main > .widget:not(.row) + .row {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+
+    .edit #page-zones__main-overlay + .widget:not(.row),
+    #page-zones__main > .widget:not(.row):first-child {
+        margin-top: 40px;
+    }
+
+
+    #page-zones__main > .widget:not(.row):last-child {
+        margin-bottom: 40px;
+
+        @media @tablet {
+            margin-bottom: 20px;
+        }
+    }
+
+
+    // Removed spacing from last section in the zone
+    #page-zones__main > .widget.row:last-child {
+        margin-bottom: 0;
+    }
+
+
+
+
+    //  Migration - Editor UI
+    // -----------------------------------
+
+
+}
